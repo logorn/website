@@ -1,0 +1,48 @@
+{
+    "name": "alexandresalome/website",
+    "description": "alexandre-salome.fr sourcecode",
+    "authors": [
+        {
+            "name": "Alexandre Salomé",
+            "email": "alexandre.salome@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "require": {
+        "php": ">=5.3.3",
+
+        "symfony/symfony":                   "dev-master",
+        "doctrine/orm":                      "dev-master",
+
+        "symfony/swiftmailer-bundle":        "dev-master",
+        "symfony/assetic-bundle":            "dev-master",
+        "symfony/monolog-bundle":            "dev-master",
+        "doctrine/doctrine-bundle":          "dev-master",
+        "twig/extensions":                   "dev-master",
+        "sensio/distribution-bundle":        "dev-master",
+        "doctrine/doctrine-fixtures-bundle": "dev-master",
+        "avalanche123/imagine-bundle":       "dev-master"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+        ],
+        "post-update-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web"
+    },
+    "minimum-stability": "dev"
+}
